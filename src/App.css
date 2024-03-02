@@ -25,10 +25,13 @@ body{
   font-size: 5rem;
 }
 
+/* mobile */
+
 
 /* NAVBAR */
 
 header{
+  background: #252525;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -36,10 +39,135 @@ header{
 }
 
 header nav .navLink{
+  font-size: 1.5rem;
   color: aliceblue;
   text-decoration: none;
   margin: 0 2rem;
   font-weight: 700;
+  line-height: 2;
+  position: relative;
+}
+
+header nav .navLink::before {
+  content: '';
+  width: 0;
+  height: 2px;
+  border-radius: 2px;
+  background-color: #fff;
+  position: absolute;
+  bottom: -.25rem;
+  right: 0;
+  transition: right .4s, width .4s, left .4s;
+}
+header nav .navLink:hover::before {
+  width: 100%;
+  left: 0;
 }
 
 /* HOME PAGE */
+
+/* HERO */
+#hero{
+
+  display: flex;
+  align-items: center;
+  padding: 0 5rem;
+}
+
+#hero #heroText{
+  width: 50vw;
+}
+
+#hero #heroText h1{
+  font-size: 3rem;
+}
+
+#heroImg{
+  width: 80%;
+}
+#heroImg img{
+  scale: 0.9;
+  animation: blob 7s ease-in-out infinite;
+  transition: border-radius 1s ease-in-out;
+  box-shadow: 0 20px 5px 5px rgba(0, 0, 0, 0.2);
+
+}
+
+button {
+  margin-top: 2rem;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  background: aliceblue;
+  font-family: "Montserrat", sans-serif;
+  box-shadow: 0px 6px 24px 0px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  cursor: pointer;
+  border: none;
+  border-radius: 100px;
+}
+
+button:after {
+  content: " ";
+  width: 0%;
+  height: 100%;
+  background: #ffd401;
+  position: absolute;
+  transition: all 0.4s ease-in-out;
+  right: 0;
+}
+
+button:hover::after {
+  right: auto;
+  left: 0;
+  width: 100%;
+}
+
+button span {
+  text-align: center;
+  text-decoration: none;
+  width: 100%;
+  padding: 18px 25px;
+  color: #252525;
+  font-size: 1.125em;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  z-index: 20;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover span {
+  color: #252525;
+  animation: scaleUp 0.3s ease-in-out;
+}
+
+/* HERO Button ANIMACIJA */
+
+@keyframes scaleUp {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.95);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* HERO IMG ANIMACIJA */
+@keyframes blob {
+  0%{
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+  50%{
+      border-radius: 30% 60% 70% 40%/50% 60% 30% 60%;
+  }
+  100%{
+      border-radius: 60% 40% 30% 70%/60% 30% 70% 40%;
+  }
+}
