@@ -1,9 +1,45 @@
+/* restart css */
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body{
   background: #252525;
+  color: aliceblue;
 }
+
+/* ERROR PAGE */
+
+#errorPage{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#errorPage h1{
+  font-size: 5rem;
+}
+
+
+/* NAVBAR */
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem 5rem;
+}
+
+header nav .navLink{
+  color: aliceblue;
+  text-decoration: none;
+  margin: 0 2rem;
+  font-weight: 700;
+}
+
+/* HOME PAGE */
